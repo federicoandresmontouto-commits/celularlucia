@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Evidencia Digital · Fiscalía N° 14</title>
+<link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+<div class="escritorio">
+  <div class="telefono" id="telefono">
+
+    <!-- 1. CÓDIGO DEL EXPEDIENTE -->
+    <section class="pantalla activa" id="p-codigo">
+      <div class="portal">
+        <div class="escudo" aria-hidden="true">F14</div>
+        <p class="portal-sup">Ministerio Público · Ficción</p>
+        <h1>Sistema de Evidencia Digital</h1>
+        <p class="portal-txt">Fiscalía de Instrucción N° 14. Para acceder a la copia forense del teléfono, ingresá el código de tu expediente. Está en la hoja de instrucciones de tu caja.</p>
+        <form id="f-codigo" autocomplete="off">
+          <label for="in-codigo">Código de expediente</label>
+          <input id="in-codigo" name="codigo" placeholder="LC-XXXX-XXXX" maxlength="16" autocapitalize="characters" spellcheck="false" required>
+          <p class="error" id="err-codigo" role="alert" hidden></p>
+          <button type="submit" id="btn-codigo">Acceder al expediente</button>
+        </form>
+        <p class="cargando" id="cargando" hidden>Abriendo expediente…</p>
+        <p class="portal-pie">Acceso restringido. Cada código corresponde a un único expediente.</p>
+      </div>
+    </section>
+
+    <!-- 2. PANTALLA DE BLOQUEO -->
+    <section class="pantalla" id="p-bloqueo">
+      <div class="forense">COPIA FORENSE · SOLO LECTURA</div>
+      <div class="bloqueo">
+        <div class="bl-hora" id="bl-hora">09:41</div>
+        <div class="bl-fecha" id="bl-fecha">domingo 18 de octubre</div>
+        <div class="bl-avisos">
+          <div class="aviso"><b>Charla</b><span id="aviso-charla">Mensajes nuevos</span></div>
+          <div class="aviso"><b>Correo</b><span id="aviso-correo">Correos nuevos</span></div>
+        </div>
+        <p class="bl-txt" id="bl-txt">Ingresá el código</p>
+        <div class="puntos" id="puntos"><i></i><i></i><i></i><i></i></div>
+        <div class="teclado" id="teclado">
+          <button data-n="1">1</button><button data-n="2">2<small>ABC</small></button><button data-n="3">3<small>DEF</small></button>
+          <button data-n="4">4<small>GHI</small></button><button data-n="5">5<small>JKL</small></button><button data-n="6">6<small>MNO</small></button>
+          <button data-n="7">7<small>PQRS</small></button><button data-n="8">8<small>TUV</small></button><button data-n="9">9<small>WXYZ</small></button>
+          <button class="tx" id="btn-salir" type="button">Salir</button><button data-n="0">0</button><button class="tx" id="btn-borrar" type="button">Borrar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. INICIO -->
+    <section class="pantalla" id="p-inicio">
+      <div class="barra"><span id="b-hora">09:41</span><span class="bat"><i id="b-bat"></i></span></div>
+      <div class="forense">COPIA FORENSE · SOLO LECTURA</div>
+      <div class="inicio">
+        <div class="widget"><div class="w-hora" id="w-hora">09:41</div><div class="w-fecha" id="w-fecha">domingo 18 de octubre</div></div>
+        <div class="apps">
+          <button class="app" data-app="chats"><span class="ico ico-charla"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg><em class="badge" id="badge-chats" hidden></em></span>Charla</button>
+          <button class="app" data-app="fotos"><span class="ico ico-fotos"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 3v5M12 16v5M3 12h5M16 12h5"/></svg></span>Fotos</button>
+          <button class="app" data-app="correo"><span class="ico ico-correo"><svg viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg><em class="badge" id="badge-correo" hidden></em></span>Correo</button>
+          <button class="app" data-app="centinela"><span class="ico ico-centinela"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z"/></svg></span>Centinela</button>
+          <button class="app off"><span class="ico ico-gris"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13" r="3.5"/></svg></span>Cámara</button>
+          <button class="app off"><span class="ico ico-gris"><svg viewBox="0 0 24 24"><path d="M5 4l4 1 1 4-2 2a12 12 0 0 0 5 5l2-2 4 1 1 4c-9 1-16-6-15-15z"/></svg></span>Teléfono</button>
+          <button class="app off"><span class="ico ico-gris"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg></span>Notas</button>
+          <button class="app off"><span class="ico ico-gris"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></span>Ajustes</button>
+        </div>
+        <p class="nota-inicio" id="nota-off" hidden>Esta app no fue incluida en la copia forense.</p>
+      </div>
+      <button class="home" data-home aria-label="Volver al inicio"></button>
+    </section>
+
+    <!-- CHATS -->
+    <section class="pantalla app-pant" id="p-chats">
+      <header class="cab cab-charla"><button class="volver" data-home aria-label="Volver">‹</button><h2>Charla</h2></header>
+      <ul class="lista" id="lista-chats"></ul>
+      <button class="home" data-home aria-label="Volver al inicio"></button>
+    </section>
+
+    <section class="pantalla app-pant" id="p-chat">
+      <header class="cab cab-charla"><button class="volver" data-ir="chats" aria-label="Volver">‹</button><span class="av" id="chat-av"></span><h2 id="chat-nombre"></h2></header>
+      <div class="conversacion" id="conversacion"></div>
+      <div class="solo-lectura">Copia forense: no se pueden enviar mensajes</div>
+      <button class="home" data-home aria-label="Volver al inicio"></button>
+    </section>
+
+    <!-- FOTOS -->
+    <section class="pantalla app-pant" id="p-fotos">
+      <header class="cab"><button class="volver" data-home aria-label="Volver">‹</button><h2>Fotos</h2></header>
+      <div class="grilla" id="grilla"></div>
+      <button class="home" data-home aria-label="Volver al inicio"></button>
+    </section>
+
+    <section class="pantalla app-pant visor" id="p-visor">
+      <header class="cab cab-oscura"><button class="volver" id="visor-volver" aria-label="Volver">‹</button><h2 id="visor-fecha"></h2></header>
+      <div class="visor-img" id="visor-img"></div>
+      <div class="visor-info" id="visor-info"></div>
+    </section>
+
+    <!-- CORREO -->
+    <section class="pantalla app-pant" id="p-correo">
+      <header class="cab cab-correo"><button class="volver" data-home aria-label="Volver">‹</button><h2>Recibidos</h2><span class="cuenta">lucia@casaferran.com.ar</span></header>
+      <ul class="lista" id="lista-correo"></ul>
+      <button class="home" data-home aria-label="Volver al inicio"></button>
+    </section>
+
+    <section class="pantalla app-pant" id="p-mail">
+      <header class="cab cab-correo"><button class="volver" data-ir="correo" aria-label="Volver">‹</button><h2>Correo</h2></header>
+      <article class="mail" id="mail"></article>
+      <button class="home" data-home aria-label="Volver al inicio"></button>
+    </section>
+
+    <!-- CENTINELA -->
+    <section class="pantalla app-pant" id="p-centinela">
+      <header class="cab cab-centinela"><button class="volver" data-home aria-label="Volver">‹</button><h2>Centinela</h2></header>
+      <div class="cen" id="cen-login">
+        <div class="cen-logo"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z"/></svg><b>CENTINELA</b><span>Seguridad y monitoreo</span></div>
+        <p class="cen-aviso">Tu sesión se cerró. Ingresá con tu usuario y clave de cliente.</p>
+        <form id="f-cen" autocomplete="off">
+          <label for="cen-u">Usuario</label><input id="cen-u" spellcheck="false" autocapitalize="none">
+          <label for="cen-c">Clave</label><input id="cen-c" type="password">
+          <p class="error" id="err-cen" role="alert" hidden></p>
+          <button type="submit">Ingresar</button>
+        </form>
+      </div>
+      <div class="cen" id="cen-panel" hidden>
+        <div class="cen-cliente"><b id="cen-nombre">Casa Ferrán</b><span>Cliente N° 20-4471 · Monitoreo 24 h</span></div>
+        <div class="tabs-cen"><button class="on" data-tab="eventos">Eventos</button><button data-tab="zonas">Zonas</button></div>
+        <ul class="lista-cen" id="cen-eventos"></ul>
+        <ul class="lista-cen" id="cen-zonas" hidden></ul>
+        <button class="cen-salir" id="cen-salir" type="button">Cerrar sesión</button>
+      </div>
+      <button class="home" data-home aria-label="Volver al inicio"></button>
+    </section>
+
+  </div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>
